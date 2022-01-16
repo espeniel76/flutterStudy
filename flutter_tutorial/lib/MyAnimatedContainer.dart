@@ -10,10 +10,9 @@ class MyAnimatedContainer extends StatefulWidget {
 }
 
 class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
-  double _width = 50;
-  double _height = 50;
-  Color _color = Colors.green;
-  double _borderRadious = 8;
+  double _w = 50;
+  double _h = 50;
+  Color _c = Colors.green;
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +22,23 @@ class _MyAnimatedContainerState extends State<MyAnimatedContainer> {
       ),
       body: Center(
         child: AnimatedContainer(
-          width: _width,
-          height: _height,
-          color: _color,
+          width: _w,
+          height: _h,
           duration: const Duration(seconds: 1),
           curve: Curves.fastOutSlowIn,
-          decoration: BoxDecoration(color: _color, borderRadius: BorderRadius.circular(_borderRadious)),
+          decoration: BoxDecoration(
+            color: _c,
+            borderRadius: BorderRadius.circular(8),
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          final r = Random();
           setState(() {
-            final random = Random();
-            _width = random.nextInt(300).toDouble();
-            _height = random.nextInt(300).toDouble();
-            _color = Color.fromRGBO(random.nextInt(256), random.nextInt(256), random.nextInt(256), 1);
-            _borderRadious = random.nextInt(100).toDouble();
+            _w = r.nextInt(300).toDouble();
+            _h = r.nextInt(300).toDouble();
+            _c = Color.fromRGBO(r.nextInt(256), r.nextInt(256), r.nextInt(256), 1);
           });
         },
         child: const Icon(Icons.play_arrow),
