@@ -4,9 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_tutorial/MyAnimatedContainer.dart';
 import 'package:flutter_tutorial/MyAnimatedOpacity.dart';
 import 'package:flutter_tutorial/MyDrawer.dart';
+import 'package:flutter_tutorial/MyFormValidation.dart';
 import 'package:flutter_tutorial/MyGridView.dart';
 import 'package:flutter_tutorial/MyOrientationBuilder.dart';
 import 'package:flutter_tutorial/MySnackBar.dart';
+import 'package:flutter_tutorial/MySwipeToDismiss.dart';
 import 'package:flutter_tutorial/MyTabController.dart';
 
 void main() {
@@ -31,7 +33,9 @@ class MyApp extends StatelessWidget {
       // home: MySnackBar(),
       // home: MyGridView(),
       // home: MyOrientationBuilder(),
-      home: MyTabController(),
+      // home: MyTabController(),
+      // home: MyFormValidation(),
+      home: MySwipeToDismissState(),
     );
   }
 }
