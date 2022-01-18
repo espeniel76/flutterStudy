@@ -15,26 +15,26 @@ class _MyDrawerState extends State<MyDrawer> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            DrawerHeader(
+            const DrawerHeader(
               child: Text('Header'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Item 1'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Item 1'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: Text('Item 1'),
+              title: const Text('Item 1'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -43,9 +43,9 @@ class _MyDrawerState extends State<MyDrawer> {
         ),
       ),
       appBar: AppBar(
-        title: Text('Drawer'),
+        title: const Text('Drawer'),
       ),
-      body: Center(
+      body: const Center(
         child: Text('Darwer 예제'),
       ),
     );

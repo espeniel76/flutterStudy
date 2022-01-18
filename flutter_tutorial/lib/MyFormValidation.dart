@@ -32,7 +32,7 @@ class _MyFormValidationState extends State<MyFormValidation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form Validation'),
+        title: const Text('Form Validation'),
       ),
       body: Form(
         key: _formKey, // formKey와 현재 form 을 링크 시킨다.
@@ -54,7 +54,7 @@ class _MyFormValidationState extends State<MyFormValidation> {
                   if (_formKey.currentState!.validate()) {
                     // valid
                     Scaffold.of(_formKey.currentContext!).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text('처리중'),
                       ),
                     );
@@ -65,7 +65,7 @@ class _MyFormValidationState extends State<MyFormValidation> {
               TextField(
                 focusNode: nameFocusNode,
                 controller: nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   hintText: '이름을 입력해 주세요',
                   border: InputBorder.none,
                   labelText: '이름',
@@ -76,7 +76,7 @@ class _MyFormValidationState extends State<MyFormValidation> {
                 onPressed: () {
                   FocusScope.of(context).requestFocus(nameFocusNode);
                 },
-                child: Text('포커스'),
+                child: const Text('포커스'),
               ),
               RaisedButton(
                 onPressed: () {
@@ -90,7 +90,7 @@ class _MyFormValidationState extends State<MyFormValidation> {
                     },
                   );
                 },
-                child: Text('TextField 값 확인'),
+                child: const Text('TextField 값 확인'),
               )
             ],
           ),

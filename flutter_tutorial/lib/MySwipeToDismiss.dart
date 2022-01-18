@@ -14,7 +14,7 @@ class _MySwipeToDismissStateState extends State<MySwipeToDismissState> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Swipe To Dismiss'),
+        title: const Text('Swipe To Dismiss'),
       ),
       body: ListView.builder(
         itemCount: items.length,

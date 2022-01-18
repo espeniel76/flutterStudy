@@ -12,14 +12,14 @@ class _MySnackBarState extends State<MySnackBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SnackBar'),
+        title: const Text('SnackBar'),
       ),
       body: Builder(
         builder: (context) => Center(
           child: RaisedButton(
             onPressed: () {
               final snackBar = SnackBar(
-                content: Text('메일이 삭제 되었습니다.'),
+                content: const Text('메일이 삭제 되었습니다.'),
                 action: SnackBarAction(
                   label: '취소',
                   onPressed: () {
@@ -29,7 +29,7 @@ class _MySnackBarState extends State<MySnackBar> {
               );
               Scaffold.of(context).showSnackBar(snackBar);
             },
-            child: Text('Show SnackBar'),
+            child: const Text('Show SnackBar'),
           ),
         ),
       ),

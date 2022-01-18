@@ -14,8 +14,8 @@ class _MyTabControllerState extends State<MyTabController> {
       length: 3,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('TabController'),
-          bottom: TabBar(
+          title: const Text('TabController'),
+          bottom: const TabBar(
             tabs: [
               Tab(icon: Icon(Icons.access_alarm), text: 'Tab1'),
               Text('Tab2'),
@@ -23,7 +23,7 @@ class _MyTabControllerState extends State<MyTabController> {
             ],
           ),
         ),
-        body: TabBarView(
+        body: const TabBarView(
           children: [
             Icon(Icons.access_alarm),
             Center(child: Text('Tab2')),
