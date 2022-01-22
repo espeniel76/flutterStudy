@@ -37,7 +37,7 @@ class _HelloPageState extends State<HelloPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: _changeMessage,
       ),
       appBar: AppBar(
@@ -45,7 +45,7 @@ class _HelloPageState extends State<HelloPage> {
       ),
       body: Text(
         _message,
-        style: TextStyle(fontSize: 30),
+        style: const TextStyle(fontSize: 30),
       ),
     );
   }
