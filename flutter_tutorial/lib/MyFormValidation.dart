@@ -34,65 +34,67 @@ class _MyFormValidationState extends State<MyFormValidation> {
       appBar: AppBar(
         title: const Text('Form Validation'),
       ),
-      body: Form(
-        key: _formKey, // formKey와 현재 form 을 링크 시킨다.
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              // validate 기능을 사용하기 위해서 TextFormField
-              TextFormField(
-                validator: (String? value) {
-                  if (value != null && value.isEmpty) {
-                    return '공백은 허용되지 않습니다.';
-                  }
-                },
-              ),
-              RaisedButton(
-                onPressed: () {
-                  if (_formKey.currentState!.validate()) {
-                    // valid
-                    Scaffold.of(_formKey.currentContext!).showSnackBar(
-                      const SnackBar(
-                        content: Text('처리중'),
-                      ),
-                    );
-                  }
-                },
-                child: Text('완료'),
-              ),
-              TextField(
-                focusNode: nameFocusNode,
-                controller: nameController,
-                decoration: const InputDecoration(
-                  hintText: '이름을 입력해 주세요',
-                  border: InputBorder.none,
-                  labelText: '이름',
+      body: SingleChildScrollView(
+        child: Form(
+          key: _formKey, // formKey와 현재 form 을 링크 시킨다.
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // validate 기능을 사용하기 위해서 TextFormField
+                TextFormField(
+                  validator: (String? value) {
+                    if (value != null && value.isEmpty) {
+                      return '공백은 허용되지 않습니다.';
+                    }
+                  },
                 ),
-                autofocus: true,
-              ),
-              RaisedButton(
-                onPressed: () {
-                  FocusScope.of(context).requestFocus(nameFocusNode);
-                },
-                child: const Text('포커스'),
-              ),
-              RaisedButton(
-                onPressed: () {
-                  print(nameController.text);
-                  showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        content: Text(nameController.text),
+                RaisedButton(
+                  onPressed: () {
+                    if (_formKey.currentState!.validate()) {
+                      // valid
+                      Scaffold.of(_formKey.currentContext!).showSnackBar(
+                        const SnackBar(
+                          content: Text('처리중'),
+                        ),
                       );
-                    },
-                  );
-                },
-                child: const Text('TextField 값 확인'),
-              )
-            ],
+                    }
+                  },
+                  child: Text('완료'),
+                ),
+                TextField(
+                  focusNode: nameFocusNode,
+                  controller: nameController,
+                  decoration: const InputDecoration(
+                    hintText: '이름을 입력해 주세요',
+                    border: InputBorder.none,
+                    labelText: '이름',
+                  ),
+                  autofocus: true,
+                ),
+                RaisedButton(
+                  onPressed: () {
+                    FocusScope.of(context).requestFocus(nameFocusNode);
+                  },
+                  child: const Text('포커스'),
+                ),
+                RaisedButton(
+                  onPressed: () {
+                    print(nameController.text);
+                    showDialog(
+                      context: context,
+                      builder: (context) {
+                        return AlertDialog(
+                          content: Text(nameController.text),
+                        );
+                      },
+                    );
+                  },
+                  child: const Text('TextField 값 확인'),
+                )
+              ],
+            ),
           ),
         ),
       ),
