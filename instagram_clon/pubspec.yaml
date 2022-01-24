@@ -38,7 +38,8 @@ dependencies:
   image_picker: ^0.8.4+4
   google_sign_in: ^5.2.3
   firebase_auth: ^3.3.5
-#  video_player: ^2.2.14
+  cloud_firestore: ^3.1.6
+  firebase_storage: ^10.2.5
 
 dev_dependencies:
   flutter_test:
