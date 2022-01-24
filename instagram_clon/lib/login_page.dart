@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  // const LoginPage({Key? key}) : super(key: key);
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +22,22 @@ class LoginPage extends StatelessWidget {
             Padding(padding: EdgeInsets.all(50)),
             SignInButton(
               Buttons.Google,
-              onPressed: () {},
+              onPressed: () {
+                // _handleSignIn();
+              },
             ),
           ],
         ),
       ),
     );
   }
+
+  // Future<FirebaseAuth> _handleSignIn() async {
+  //   GoogleSignInAccount googleUser = _googleSignIn.signIn();
+  //   GoogleSignInAuthentication googleAuth = await googleUser.authentication;
+  //   FirebaseAuth user = await _auth.signInWithCredential(
+  //       GoogleAuthProvider.credential(
+  //           idToken: googleAuth.idToken, accessToken: googleAuth.accessToken));
+  //   return user;
+  // }
 }
