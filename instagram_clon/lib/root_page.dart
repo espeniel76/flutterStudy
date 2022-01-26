@@ -14,7 +14,8 @@ class RootPage extends StatelessWidget {
     // return LoginPage();
     // return CreatePage();
     return StreamBuilder<User>(
-      stream: FirebaseAuth.instance.authStateChanges()
+      // 이거 동작 안함
+      // stream: FirebaseAuth.instance.authStateChanges()
       builder: (BuildContext context, AsyncSnapshot snapshot) {
         if (snapshot.hasData) {
           return TabPage(snapshot.data);
