@@ -19,7 +19,7 @@ class _AccountPageState extends State<AccountPage> {
       appBar: AppBar(actions: [
         IconButton(
           onPressed: () {
-            // 로그아웃
+// 로그아웃
             FirebaseAuth.instance.signOut();
             _googleSignIn.signOut();
           },
@@ -30,14 +30,14 @@ class _AccountPageState extends State<AccountPage> {
     );
   }
 
-  // Widget _buildAppBar() {
-  //   return AppBar(actions: [
-  //     IconButton(
-  //       onPressed: () {},
-  //       icon: const Icon(Icons.exit_to_app),
-  //     ),
-  //   ]);
-  // }
+// Widget _buildAppBar() {
+//   return AppBar(actions: [
+//     IconButton(
+//       onPressed: () {},
+//       icon: const Icon(Icons.exit_to_app),
+//     ),
+//   ]);
+// }
 
   Widget _buildBody() {
     return Padding(
@@ -51,10 +51,12 @@ class _AccountPageState extends State<AccountPage> {
               Stack(
                 children: [
                   const SizedBox(
-                    // alignmet :
+// alignmet :
                     width: 80,
                     height: 80,
-                    child: CircleAvatar(backgroundImage: NetworkImage('https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
+                    child: CircleAvatar(
+                        backgroundImage: NetworkImage(
+                            'https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
                   ),
                   Container(
                     width: 80,
