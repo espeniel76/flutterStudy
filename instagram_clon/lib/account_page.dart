@@ -1,5 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AccountPage extends StatefulWidget {
   const AccountPage({Key? key}) : super(key: key);
@@ -9,12 +11,18 @@ class AccountPage extends StatefulWidget {
 }
 
 class _AccountPageState extends State<AccountPage> {
+  final GoogleSignIn _googleSignIn = GoogleSignIn();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(actions: [
         IconButton(
-          onPressed: () {},
+          onPressed: () {
+            // 로그아웃
+            FirebaseAuth.instance.signOut();
+            _googleSignIn.signOut();
+          },
           icon: const Icon(Icons.exit_to_app),
         ),
       ]),
@@ -46,9 +54,7 @@ class _AccountPageState extends State<AccountPage> {
                     // alignmet :
                     width: 80,
                     height: 80,
-                    child: CircleAvatar(
-                        backgroundImage:
-                            NetworkImage('https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
+                    child: CircleAvatar(backgroundImage: NetworkImage('https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
                   ),
                   Container(
                     width: 80,
