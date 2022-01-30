@@ -118,6 +118,11 @@ class _TTSTestState extends State<TTSTest> {
     await flutterTts.setSpeechRate(rate);
     await flutterTts.setPitch(pitch);
 
+    print("========= Initialize =============");
+    print(volume);
+    print(rate);
+    print(pitch);
+
     if (_newVoiceText != null) {
       if (_newVoiceText!.isNotEmpty) {
         await flutterTts.speak(_newVoiceText!);
@@ -172,6 +177,7 @@ class _TTSTestState extends State<TTSTest> {
   void changedLanguageDropDownItem(String? selectedType) {
     setState(() {
       language = selectedType;
+      print(language);
       flutterTts.setLanguage(language!);
       if (isAndroid) {
         flutterTts.isLanguageInstalled(language!).then((value) => isCurrentLanguageInstalled = (value as bool));
@@ -312,7 +318,11 @@ class _TTSTestState extends State<TTSTest> {
 
   Widget _buildSliders() {
     return Column(
-      children: [_volume(), _pitch(), _rate()],
+      children: [
+        _volume(),
+        _pitch(),
+        _rate(),
+      ],
     );
   }
 

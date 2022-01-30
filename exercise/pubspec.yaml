@@ -38,6 +38,9 @@ dependencies:
   audio_service: ^0.18.3
   just_audio: ^0.9.18
   flutter_tts: ^3.3.3
+  fluttertoast: ^8.0.8
+  flutter_svg: ^1.0.3
+  syncfusion_flutter_gauges: ^19.4.47
 
 dev_dependencies:
   flutter_test:
