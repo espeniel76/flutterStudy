@@ -1,5 +1,6 @@
 import 'package:exercise/ChangeColor.dart';
 import 'package:exercise/DynamicFocus.dart';
+import 'package:exercise/HttpTest.dart';
 import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SvgTest.dart';
@@ -52,6 +53,7 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'SVG', SvgTest()),
               _push(context, 'Page View', PageViewTest()),
               _push(context, 'Gauges View', SyncfusionFlutterGaugesTest()),
+              _push(context, 'REST Test', RestTest()),
             ],
           ),
         ),
