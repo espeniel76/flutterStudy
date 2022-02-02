@@ -28,6 +28,15 @@ class RestTest extends StatefulWidget {
 }
 
 class _RestTestState extends State<RestTest> {
+  Map<String, String> _headers = {
+    'Content-Type': '',
+    'Accept': 'application/json',
+    'Accept-Encoding': 'gzip',
+    'Authorization':
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGxvY2F0ZWQiOjEsImF1dGhvcml6ZWQiOnRydWUsImVtYWlsIjoiZXNwZW5pZWxAZ29vZ2xlLmNvbSIsImV4cCI6MTY0Mzg0NTc1Mywic2VxX21lbWJlciI6MSwidXNlcl9sZXZlbCI6NX0.n-0cXwB1yIlyu0_0yzskr8YeFG5ZobK57TFK2tVgbvc'
+  };
+  var _apiUrl = '192.168.0.17:3001';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +49,7 @@ class _RestTestState extends State<RestTest> {
               onPressed: () async {
                 var url = Uri.https('www.googleapis.com', '/books/v1/volumes', {'q': '{http}'});
                 var response = await http.get(url);
+                print(response.headers);
                 if (response.statusCode == 200) {
                   var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
                   print(jsonResponse);
@@ -49,33 +59,63 @@ class _RestTestState extends State<RestTest> {
                   print('Request failed with status: ${response.statusCode}.');
                 }
               },
-              child: Text('GET HTTPS'),
+              child: Text('HTTPS GET'),
             ),
             ElevatedButton(
               onPressed: () async {
-                Map<String, String> headers = {
-                  'Content-Type': 'text/plain',
-                  'Accept': 'application/json',
-                  'Accept-Encoding': 'gzip, deflate, br',
-                  'Connection': 'keep-alive',
-                  'Authorization':
-                      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhbGxvY2F0ZWQiOjEsImF1dGhvcml6ZWQiOnRydWUsImVtYWlsIjoiZXNwZW5pZWxAZ29vZ2xlLmNvbSIsImV4cCI6MTY0MzcxMzE4OCwic2VxX21lbWJlciI6MSwidXNlcl9sZXZlbCI6NX0.HhA9JwrLlvWDi9oE4vzSVt7tSmwVpyyUua9L971VW_k'
-                };
-                var url = Uri.http('192.168.0.17:3001', '/study/chapters', {'q': '{http}'});
-                http.Response response = await http.get(url, headers: headers);
-                print(response.headers);
-                if (response.statusCode == 200) {
-                  var jsonResponse = convert.jsonDecode(response.body) as Map<String, dynamic>;
-                  print(jsonResponse);
-                } else {
-                  print('Request failed with status: ${response.statusCode}.');
-                }
+                var o = await _httpGet('/study/chapters');
+                print(o);
               },
-              child: Text('GET HTTP'),
+              child: Text('HTTP GET'),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                Map<String, dynamic> _body = {'seq_chapter': 1, 'seq_sentence_log': 0};
+                var o = await _httpPost('/study/sentence', _body);
+                print(o);
+              },
+              child: Text('HTTP POST'),
             ),
           ],
         ),
       ),
     );
+  }
+
+  Future<Map<String, dynamic>> _httpGet(_uri) async {
+    _headers['Content-Type'] = 'text/plain';
+    Map<String, dynamic> _json;
+    var url = Uri.http(_apiUrl, _uri);
+    http.Response response = await http.get(url, headers: _headers);
+    _json = convert.jsonDecode(response.body) as Map<String, dynamic>;
+    switch (response.statusCode) {
+      case 200:
+      case 201:
+        break;
+
+      default:
+        _json["error"] = 'Request failed with status: ${response.statusCode}.';
+        break;
+    }
+    return _json;
+  }
+
+  Future<Map<String, dynamic>> _httpPost(_uri, Map<String, dynamic> _body) async {
+    _headers['Content-Type'] = 'application/json';
+    print(_headers);
+    Map<String, dynamic> _json;
+    var url = Uri.http(_apiUrl, _uri);
+    http.Response response = await http.post(url, body: convert.jsonEncode(_body), headers: _headers);
+    _json = convert.jsonDecode(response.body) as Map<String, dynamic>;
+    switch (response.statusCode) {
+      case 200:
+      case 201:
+        break;
+
+      default:
+        _json["error"] = 'Request failed with status: ${response.statusCode}.';
+        break;
+    }
+    return _json;
   }
 }
