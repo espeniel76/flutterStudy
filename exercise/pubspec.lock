@@ -398,14 +398,14 @@ packages:
       name: syncfusion_flutter_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.47"
+    version: "19.4.48"
   syncfusion_flutter_gauges:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_gauges
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.47"
+    version: "19.4.48"
   synchronized:
     dependency: transitive
     description:
@@ -461,7 +461,7 @@ packages:
       name: win32
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.8"
+    version: "2.3.10"
   xdg_directories:
     dependency: transitive
     description:
