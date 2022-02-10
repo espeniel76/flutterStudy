@@ -1,6 +1,9 @@
+import 'package:exercise/AdvancedIcon.dart';
+import 'package:exercise/AnimatedContainerTest.dart';
 import 'package:exercise/ChangeColor.dart';
 import 'package:exercise/DynamicFocus.dart';
 import 'package:exercise/HttpTest.dart';
+import 'package:exercise/MarqueeTest.dart';
 import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SvgTest.dart';
@@ -45,15 +48,18 @@ class _HelloPageState extends State<HelloPage> {
           child: Wrap(
             children: [
               _push(context, '폼 벨리데이션', const MyFormValidation()),
-              _push(context, '다이나믹포커스', DynamicFocus()),
-              _push(context, '체인지 컬러', ChangeColor()),
-              _push(context, '페이지전환', TransitionTest()),
-              _push(context, 'TTS 테스트', TTSTest()),
-              _push(context, '버블페인터', CustomPaint()),
+              _push(context, '다이나믹포커스', const DynamicFocus()),
+              _push(context, '체인지 컬러', const ChangeColor()),
+              _push(context, '페이지전환', const TransitionTest()),
+              _push(context, 'TTS 테스트', const TTSTest()),
+              _push(context, '버블페인터', const CustomPaint()),
               _push(context, 'SVG', SvgTest()),
               _push(context, 'Page View', PageViewTest()),
-              _push(context, 'Gauges View', SyncfusionFlutterGaugesTest()),
-              _push(context, 'REST Test', RestTest()),
+              _push(context, 'Gauges View', const SyncfusionFlutterGaugesTest()),
+              _push(context, 'REST Test', const RestTest()),
+              _push(context, 'Marquee', const MarqueeTest()),
+              _push(context, 'Advanced Icon', const AdvancedIcon()),
+              _push(context, 'Animated Container', const AnimatedContainerTest()),
             ],
           ),
         ),
@@ -63,7 +69,7 @@ class _HelloPageState extends State<HelloPage> {
 
   Widget _push(BuildContext _context, String _title, Widget _widget) {
     return Container(
-      padding: EdgeInsets.fromLTRB(5, 0, 5, 0),
+      padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: ElevatedButton(
         onPressed: () {
           Navigator.push(_context, MaterialPageRoute(builder: (context) => _widget));

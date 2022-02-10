@@ -42,6 +42,8 @@ dependencies:
   flutter_svg: ^1.0.3
   syncfusion_flutter_gauges: ^19.4.47
   http: ^0.13.4
+  marquee: ^2.2.0
+  advanced_icon: ^0.1.2
 
 dev_dependencies:
   flutter_test:
@@ -72,6 +74,8 @@ flutter:
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
+  assets:
+    - assets/images/
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
