@@ -25,12 +25,9 @@ class _LoginPageState extends State<LoginPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              'Instagram Clon',
-              style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold),
-            ),
+            const Text('Instagram Clon', style: TextStyle(fontSize: 40.0, fontWeight: FontWeight.bold)),
             Container(
-              margin: EdgeInsets.all(50.0),
+              margin: const EdgeInsets.all(20.0),
             ),
             SignInButton(
               Buttons.Google,
@@ -52,9 +49,7 @@ class _LoginPageState extends State<LoginPage> {
    * google, firebase login 비동기
    */
   Future<User> _handleSignIn() async {
-    // await Firebase.initializeApp(options: );
     await Firebase.initializeApp();
-    // await FirebaseAuth.instance.useAuthEmulator('localhost', port)
 
     final GoogleSignIn _googleSignIn = GoogleSignIn();
     final FirebaseAuth _auth = FirebaseAuth.instance; // singleton

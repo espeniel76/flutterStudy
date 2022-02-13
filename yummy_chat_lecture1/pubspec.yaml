@@ -1,4 +1,4 @@
-name: exercise
+name: yummy_chat_lecture1
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -18,7 +18,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0-134.1.beta <3.0.0"
+  sdk: ">=2.16.1 <3.0.0"
 
 # Dependencies specify other packages that your package needs in order to work.
 # To automatically upgrade your package dependencies to the latest versions
@@ -34,17 +34,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  transition: ^2.0.2
-  audio_service: ^0.18.3
-  just_audio: ^0.9.18
-  flutter_tts: ^3.3.3
-  fluttertoast: ^8.0.8
-  flutter_svg: ^1.0.3
-  syncfusion_flutter_gauges: ^19.4.47
-  http: ^0.13.4
-  marquee: ^2.2.0
-  advanced_icon: ^0.1.2
-  kakao_flutter_sdk: ^0.9.0
 
 dev_dependencies:
   flutter_test:
@@ -69,14 +58,12 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - image/red.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-  assets:
-    - assets/images/
 
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages

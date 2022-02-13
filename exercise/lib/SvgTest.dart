@@ -61,9 +61,7 @@ class SvgTest extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const SvgTestState(title: 'Flutter SVG Demo'),
     );
   }
@@ -86,9 +84,7 @@ class _SvgTestStateState extends State<SvgTestState> {
     super.initState();
     _dimension = 203.0;
     for (String assetName in _assetNames) {
-      _painters.add(
-        SvgPicture.asset(assetName),
-      );
+      _painters.add(SvgPicture.asset(assetName));
     }
 
     for (int i = 0; i < iconNames.length; i++) {
