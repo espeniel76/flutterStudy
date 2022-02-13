@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:yummy_chat_lecture1/config/palette.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:yummy_chat_lecture1/screens/chat_screen.dart';
 
 class LoginSignupScreen extends StatefulWidget {
   const LoginSignupScreen({Key? key}) : super(key: key);
@@ -9,6 +11,8 @@ class LoginSignupScreen extends StatefulWidget {
 }
 
 class _LoginSignupScreenState extends State<LoginSignupScreen> {
+  final _authentication = FirebaseAuth.instance;
+
   bool isSignupScreen = true;
   final _formKey = GlobalKey<FormState>();
   String userName = '';
@@ -133,6 +137,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   onSaved: (val) {
                                     userName = val!;
                                   },
+                                  onChanged: (val) {
+                                    userName = val;
+                                  },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.account_circle, color: Palette.iconColor),
                                       enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
@@ -143,6 +150,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
+                                  keyboardType: TextInputType.emailAddress,
                                   key: const ValueKey(2),
                                   validator: (value) {
                                     if (value!.isEmpty || !value.contains('@')) {
@@ -152,6 +160,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   },
                                   onSaved: (val) {
                                     userEmail = val!;
+                                  },
+                                  onChanged: (val) {
+                                    userEmail = val;
                                   },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.email, color: Palette.iconColor),
@@ -163,6 +174,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
+                                  obscureText: true,
                                   key: const ValueKey(3),
                                   validator: (value) {
                                     if (value!.isEmpty || value.length < 6) {
@@ -172,6 +184,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   },
                                   onSaved: (val) {
                                     userPassword = val!;
+                                  },
+                                  onChanged: (val) {
+                                    userPassword = val;
                                   },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.lock, color: Palette.iconColor),
@@ -256,8 +271,34 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   width: 90,
                   decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(50)),
                   child: GestureDetector(
-                    onTap: () {
-                      _tryValidation();
+                    onTap: () async {
+                      if (isSignupScreen) {
+                        _tryValidation();
+
+                        try {
+                          final newUser = await _authentication.createUserWithEmailAndPassword(
+                            email: userEmail,
+                            password: userPassword,
+                          );
+
+                          if (newUser.user != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return ChatScreen();
+                              }),
+                            );
+                          }
+                        } catch (e) {
+                          print(e);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please check your email and password'),
+                              backgroundColor: Colors.blue,
+                            ),
+                          );
+                        }
+                      }
                     },
                     child: Container(
                       decoration: BoxDecoration(
