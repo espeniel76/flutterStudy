@@ -51,7 +51,11 @@ class _LoginPageState extends State<LoginPage> {
   Future<User> _handleSignIn() async {
     await Firebase.initializeApp();
 
-    final GoogleSignIn _googleSignIn = GoogleSignIn();
+    final GoogleSignIn _googleSignIn = GoogleSignIn(
+      scopes: [
+        'email'
+      ]
+    );
     final FirebaseAuth _auth = FirebaseAuth.instance; // singleton
 
     final GoogleSignInAccount? account = await _googleSignIn.signIn();
