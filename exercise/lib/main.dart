@@ -6,6 +6,7 @@ import 'package:exercise/HttpTest.dart';
 import 'package:exercise/MarqueeTest.dart';
 import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
+import 'package:exercise/SignInDemo.dart';
 import 'package:exercise/SvgTest.dart';
 import 'package:exercise/SyncfusionFlutterGaugesTest.dart';
 import 'package:exercise/TTSTest.dart';
@@ -60,6 +61,7 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'Marquee', const MarqueeTest()),
               _push(context, 'Advanced Icon', const AdvancedIcon()),
               _push(context, 'Animated Container', const AnimatedContainerTest()),
+              _push(context, 'Google SignIn', SignInDemo()),
             ],
           ),
         ),
