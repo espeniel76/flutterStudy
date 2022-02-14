@@ -4,6 +4,9 @@
 
 // ignore_for_file: public_member_api_docs
 
+/**
+ * 너는 지금 도박을 하고있다
+ */
 import 'dart:async';
 import 'dart:convert' show json;
 
