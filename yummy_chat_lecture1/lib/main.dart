@@ -5,7 +5,7 @@ import 'package:firebase_core/firebase_core.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Chatting app',
       theme: ThemeData(primarySwatch: Colors.blue),
-      home: LoginSignupScreen(),
+      home: const LoginSignupScreen(),
     );
   }
 }
