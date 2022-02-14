@@ -19,6 +19,7 @@ GoogleSignIn _googleSignIn = GoogleSignIn(
     'https://www.googleapis.com/auth/contacts.readonly',
   ],
 );
+// GoogleSignIn _googleSignIn = GoogleSignIn();
 
 class SignInDemo extends StatefulWidget {
   @override
@@ -93,7 +94,9 @@ class SignInDemoState extends State<SignInDemo> {
     try {
       await _googleSignIn.signIn();
     } catch (error) {
+      print('##################################################################################################################');
       print(error);
+      print('##################################################################################################################');
     }
   }
 
