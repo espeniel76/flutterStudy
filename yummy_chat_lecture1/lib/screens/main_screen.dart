@@ -61,7 +61,8 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(isSignupScreen ? 'Signup to continute' : 'Signin to continue', style: const TextStyle(letterSpacing: 1.0, color: Colors.white))
+                      Text(isSignupScreen ? 'Signup to continute' : 'Signin to continue',
+                          style: const TextStyle(letterSpacing: 1.0, color: Colors.white))
                     ],
                   ),
                 ),
@@ -85,7 +86,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   boxShadow: [BoxShadow(color: Colors.black.withOpacity(0.3), blurRadius: 5, spreadRadius: 5)],
                 ),
                 child: SingleChildScrollView(
-                  padding: EdgeInsets.only(bottom: 20),
+                  padding: const EdgeInsets.only(bottom: 20),
                   child: Column(
                     children: [
                       Row(
@@ -99,7 +100,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             },
                             child: Column(
                               children: [
-                                Text('LOGIN', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: !isSignupScreen ? Palette.activeColor : Palette.textColor1)),
+                                Text('LOGIN',
+                                    style: TextStyle(
+                                        fontSize: 16,
+                                        fontWeight: FontWeight.bold,
+                                        color: !isSignupScreen ? Palette.activeColor : Palette.textColor1)),
                                 if (!isSignupScreen) Container(margin: const EdgeInsets.only(top: 3), height: 2, width: 55, color: Colors.orange)
                               ],
                             ),
@@ -112,7 +117,9 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             },
                             child: Column(
                               children: [
-                                Text('SIGNUP', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: isSignupScreen ? Palette.activeColor : Palette.textColor1)),
+                                Text('SIGNUP',
+                                    style: TextStyle(
+                                        fontSize: 16, fontWeight: FontWeight.bold, color: isSignupScreen ? Palette.activeColor : Palette.textColor1)),
                                 if (isSignupScreen) Container(margin: const EdgeInsets.only(top: 3), height: 2, width: 55, color: Colors.orange)
                               ],
                             ),
@@ -142,8 +149,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.account_circle, color: Palette.iconColor),
-                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
                                       hintText: 'user name',
                                       hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
                                       contentPadding: EdgeInsets.all(10)),
@@ -166,8 +175,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.email, color: Palette.iconColor),
-                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
                                       hintText: 'email',
                                       hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
                                       contentPadding: EdgeInsets.all(10)),
@@ -190,8 +201,10 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   },
                                   decoration: const InputDecoration(
                                       prefixIcon: Icon(Icons.lock, color: Palette.iconColor),
-                                      enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
-                                      focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      enabledBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                      focusedBorder: OutlineInputBorder(
+                                          borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
                                       hintText: 'password',
                                       hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
                                       contentPadding: EdgeInsets.all(10)),
@@ -218,10 +231,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   onSaved: (val) {
                                     userEmail = val!;
                                   },
+                                  onChanged: (val) {
+                                    userEmail = val;
+                                  },
                                   decoration: const InputDecoration(
                                     prefixIcon: Icon(Icons.email, color: Palette.iconColor),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
                                     hintText: 'email',
                                     hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
                                     contentPadding: EdgeInsets.all(10),
@@ -229,6 +247,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                 ),
                                 const SizedBox(height: 8),
                                 TextFormField(
+                                  obscureText: true,
                                   key: const ValueKey(5),
                                   validator: (value) {
                                     if (value!.isEmpty || value.length < 6) {
@@ -239,10 +258,15 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                   onSaved: (val) {
                                     userPassword = val!;
                                   },
+                                  onChanged: (val) {
+                                    userPassword = val;
+                                  },
                                   decoration: const InputDecoration(
                                     prefixIcon: Icon(Icons.lock, color: Palette.iconColor),
-                                    enabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
-                                    focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(color: Palette.textColor1), borderRadius: BorderRadius.all(Radius.circular(35))),
                                     hintText: 'password',
                                     hintStyle: TextStyle(fontSize: 14, color: Palette.textColor1),
                                     contentPadding: EdgeInsets.all(10),
@@ -291,6 +315,30 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                           }
                         } catch (e) {
                           print(e);
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(
+                              content: Text('Please check your email and password'),
+                              backgroundColor: Colors.blue,
+                            ),
+                          );
+                        }
+                      }
+                      if (!isSignupScreen) {
+                        _tryValidation();
+                        try {
+                          final newUser = await _authentication.signInWithEmailAndPassword(
+                            email: userEmail,
+                            password: userPassword,
+                          );
+                          if (newUser.user != null) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) {
+                                return ChatScreen();
+                              }),
+                            );
+                          }
+                        } catch (e) {
                           ScaffoldMessenger.of(context).showSnackBar(
                             const SnackBar(
                               content: Text('Please check your email and password'),
