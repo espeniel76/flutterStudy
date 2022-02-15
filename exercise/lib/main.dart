@@ -3,6 +3,7 @@ import 'package:exercise/AnimatedContainerTest.dart';
 import 'package:exercise/ChangeColor.dart';
 import 'package:exercise/DynamicFocus.dart';
 import 'package:exercise/HttpTest.dart';
+import 'package:exercise/LocalStorageTest.dart';
 import 'package:exercise/MarqueeTest.dart';
 import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
@@ -62,6 +63,7 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'Advanced Icon', const AdvancedIcon()),
               _push(context, 'Animated Container', const AnimatedContainerTest()),
               _push(context, 'Google SignIn', SignInDemo()),
+              _push(context, 'Local Storage', const LocalStorageTest()),
             ],
           ),
         ),
