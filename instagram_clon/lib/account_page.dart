@@ -54,9 +54,7 @@ class _AccountPageState extends State<AccountPage> {
 // alignmet :
                     width: 80,
                     height: 80,
-                    child: CircleAvatar(
-                        backgroundImage: NetworkImage(
-                            'https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
+                    child: CircleAvatar(backgroundImage: NetworkImage('https://stimg.afreecatv.com/NORMAL_BBS/3/23853253/412161ed7d023b72c.png')),
                   ),
                   Container(
                     width: 80,
