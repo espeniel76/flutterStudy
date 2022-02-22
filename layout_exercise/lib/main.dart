@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:layout_exercise/exercise/MyExercise01.dart';
+import 'package:layout_exercise/exercise/ContainerEx.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +36,23 @@ class _HelloPageState extends State<HelloPage> {
         child: Center(
           child: Wrap(
             children: [
-              _push(context, 'Container 레이아웃 연습', const MyExercise01('Container 레이아웃 연습')),
+              _push(context, 'Container', ContainerEx01('Container1')),
+              _push(context, 'Container2', ContainerEx02('Container2')),
+              _push(context, 'Container3', ContainerEx03('Container3')),
+              _push(context, 'Container4', ContainerEx04('Container4')),
+              _push(context, 'SafeArea', SafeAreaEx01('SafeArea')),
+              _push(context, 'Center', CenterEx01('Center')),
+              _push(context, 'Padding', ContainerEx02('Padding')),
+              _push(context, 'Column1', ColumnEx01('Column1')),
+              _push(context, 'Column2', ColumnEx02('Column2')),
+              _push(context, 'Column3', ColumnEx03('Column3')),
+              _push(context, 'Column4', ColumnEx04('Column4')),
+              _push(context, 'Row1', RowEx01('Row1')),
+              _push(context, 'Row2', RowEx02('Row2')),
+              _push(context, 'Row3', RowEx03('Row3')),
+              _push(context, 'Expanded', ExpandedEx01('Expanded')),
+              _push(context, 'Stack', StackEx01('Stack')),
+              _push(context, 'SizedBox', SizedBoxEx01('SizedBox')),
             ],
           ),
         ),
@@ -55,7 +71,7 @@ class _HelloPageState extends State<HelloPage> {
           children: [
             const Icon(Icons.offline_bolt),
             const SizedBox(width: 5),
-            Text(_title),
+            Text(_title + ' 레이아웃 연습'),
           ],
         ),
       ),
