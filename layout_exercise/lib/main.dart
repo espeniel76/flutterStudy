@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Layout Exercise',
       theme: ThemeData(
-        primarySwatch: Colors.deepOrange,
+        // primarySwatch: Colors.deepOrange,
       ),
       home: const HelloPage(),
     );
