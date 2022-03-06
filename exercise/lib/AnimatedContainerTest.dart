@@ -9,6 +9,8 @@ class AnimatedContainerTest extends StatefulWidget {
 }
 
 class _AnimatedContainerTestState extends State<AnimatedContainerTest> {
+
+
   double _size = 100;
 
   @override
@@ -20,16 +22,14 @@ class _AnimatedContainerTestState extends State<AnimatedContainerTest> {
           onTap: () {
             final random = Random();
             setState(() {
-              _size = random.nextInt(200).toDouble() + 100;
+              _size = random.nextInt(100).toDouble();
             });
           },
           child: AnimatedContainer(
             duration: Duration(seconds: 1),
-            width: _size,
+            width: 10,
             height: _size,
-            // child: Container(color: Colors.blue),
-            // child: Icon(Icons.description, size: _size,),
-            child: Image.asset('assets/images/sashaaaaaaaaaa2.PNG'),
+            child: Container(color: Colors.blueAccent,),
             curve: Curves.fastOutSlowIn,
           ),
         ),

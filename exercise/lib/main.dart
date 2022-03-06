@@ -1,5 +1,7 @@
+import 'package:exercise/ActiveTextTest.dart';
 import 'package:exercise/AdvancedIcon.dart';
 import 'package:exercise/AnimatedContainerTest.dart';
+import 'package:exercise/AnimatedFaded.dart';
 import 'package:exercise/ChangeColor.dart';
 import 'package:exercise/DynamicFocus.dart';
 import 'package:exercise/HttpTest.dart';
@@ -10,6 +12,7 @@ import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SignInDemo.dart';
 import 'package:exercise/SvgTest.dart';
 import 'package:exercise/SyncfusionFlutterGaugesTest.dart';
+import 'package:exercise/SyncfusionSliderTest.dart';
 import 'package:exercise/TTSTest.dart';
 import 'package:exercise/TransitionTest.dart';
 import 'package:flutter/material.dart';
@@ -62,8 +65,11 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'Marquee', const MarqueeTest()),
               _push(context, 'Advanced Icon', const AdvancedIcon()),
               _push(context, 'Animated Container', const AnimatedContainerTest()),
+              _push(context, 'Animated Faded', const AnimatedFaded()),
               _push(context, 'Google SignIn', SignInDemo()),
               _push(context, 'Local Storage', const LocalStorageTest()),
+              _push(context, 'Syncfusion Slider', const SyncfusionSliderTest()),
+              _push(context, 'Active Text test', ActiveTextTest()),
             ],
           ),
         ),
