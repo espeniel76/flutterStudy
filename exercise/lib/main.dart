@@ -10,11 +10,14 @@ import 'package:exercise/MarqueeTest.dart';
 import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SignInDemo.dart';
+import 'package:exercise/SlideAnimationTest.dart';
 import 'package:exercise/SvgTest.dart';
 import 'package:exercise/SyncfusionFlutterGaugesTest.dart';
 import 'package:exercise/SyncfusionSliderTest.dart';
 import 'package:exercise/TTSTest.dart';
+import 'package:exercise/TabBarTest.dart';
 import 'package:exercise/TransitionTest.dart';
+import 'package:exercise/VolumeControlTest.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -70,6 +73,9 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'Local Storage', const LocalStorageTest()),
               _push(context, 'Syncfusion Slider', const SyncfusionSliderTest()),
               _push(context, 'Active Text test', ActiveTextTest()),
+              _push(context, 'VolumeControl', VolumeControlTest()),
+              _push(context, 'Slide Test', Page1()),
+              _push(context, 'Tab bar', TabBarTest()),
             ],
           ),
         ),

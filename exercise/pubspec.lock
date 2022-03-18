@@ -21,7 +21,7 @@ packages:
       name: audio_service
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.18.3"
+    version: "0.18.4"
   audio_service_platform_interface:
     dependency: transitive
     description:
@@ -176,7 +176,7 @@ packages:
       name: fluttertoast
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "8.0.8"
+    version: "8.0.9"
   google_sign_in:
     dependency: "direct main"
     description:
@@ -253,7 +253,7 @@ packages:
       name: just_audio_web
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.4.4"
+    version: "0.4.7"
   kakao_flutter_sdk:
     dependency: "direct main"
     description:
@@ -573,28 +573,28 @@ packages:
       name: syncfusion_flutter_charts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.53"
+    version: "19.4.55"
   syncfusion_flutter_core:
     dependency: transitive
     description:
       name: syncfusion_flutter_core
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.53"
+    version: "19.4.55"
   syncfusion_flutter_gauges:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_gauges
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.53"
+    version: "19.4.55"
   syncfusion_flutter_sliders:
     dependency: "direct main"
     description:
       name: syncfusion_flutter_sliders
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "19.4.53"
+    version: "19.4.55"
   synchronized:
     dependency: transitive
     description:
@@ -602,6 +602,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.0"
+  system_shortcuts:
+    dependency: transitive
+    description:
+      name: system_shortcuts
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   term_glyph:
     dependency: transitive
     description:
@@ -644,6 +651,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.1"
+  volume:
+    dependency: "direct main"
+    description:
+      name: volume
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.1"
+  volume_control:
+    dependency: "direct main"
+    description:
+      name: volume_control
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.5"
   win32:
     dependency: transitive
     description:
