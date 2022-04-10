@@ -32,6 +32,7 @@ dependencies:
   syncfusion_flutter_charts: ^19.4.53
   volume_control: ^0.1.5
   volume: ^1.0.1
+  sliding_up_panel: ^2.0.0+1
 
 dev_dependencies:
   flutter_test:

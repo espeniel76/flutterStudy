@@ -3,7 +3,10 @@ import 'package:exercise/AdvancedIcon.dart';
 import 'package:exercise/AnimatedContainerTest.dart';
 import 'package:exercise/AnimatedFaded.dart';
 import 'package:exercise/ChangeColor.dart';
+import 'package:exercise/CheckboxListTile.dart';
 import 'package:exercise/DynamicFocus.dart';
+import 'package:exercise/EnsureVisibleTest.dart';
+import 'package:exercise/GlobalKeyTest.dart';
 import 'package:exercise/HttpTest.dart';
 import 'package:exercise/LocalStorageTest.dart';
 import 'package:exercise/MarqueeTest.dart';
@@ -11,6 +14,7 @@ import 'package:exercise/MyFormValidation.dart';
 import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SignInDemo.dart';
 import 'package:exercise/SlideAnimationTest.dart';
+import 'package:exercise/SlidingUpPanelTest.dart';
 import 'package:exercise/SvgTest.dart';
 import 'package:exercise/SyncfusionFlutterGaugesTest.dart';
 import 'package:exercise/SyncfusionSliderTest.dart';
@@ -43,7 +47,7 @@ class HelloPage extends StatefulWidget {
   const HelloPage({Key? key}) : super(key: key);
 
   @override
-  _HelloPageState createState() => _HelloPageState();
+  State<HelloPage> createState() => _HelloPageState();
 }
 
 class _HelloPageState extends State<HelloPage> {
@@ -76,6 +80,10 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, 'VolumeControl', VolumeControlTest()),
               _push(context, 'Slide Test', Page1()),
               _push(context, 'Tab bar', TabBarTest()),
+              _push(context, 'Sliding Up', SlidingUpPanelTest()),
+              _push(context, 'Checkbox Tile', CheckboxListTileTest()),
+              _push(context, 'Sections', ArticlePage(sections: sections)),
+              _push(context, 'GlobalKeyTest', GlobalKeyTest()),
             ],
           ),
         ),
