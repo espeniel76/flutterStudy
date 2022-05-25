@@ -35,5 +35,4 @@ class KakaoLogin implements SocialLogin {
       return false;
     }
   }
-
 }

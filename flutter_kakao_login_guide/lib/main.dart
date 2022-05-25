@@ -46,8 +46,8 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            // Image.network(viewModel.user?.kakaoAccount?.profile?.profileImageUrl ?? ''),
-            Text(viewModel.user?.kakaoAccount?.profile?.profileImageUrl ?? ''),
+            Image.network(viewModel.user?.kakaoAccount?.profile?.profileImageUrl ?? ''),
+            // Text(viewModel.user?.kakaoAccount?.profile?.profileImageUrl ?? ''),
             Text(
               '${viewModel.isLogined}',
               style: Theme.of(context).textTheme.headline4,
