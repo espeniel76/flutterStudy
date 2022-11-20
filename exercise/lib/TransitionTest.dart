@@ -67,7 +67,7 @@ class _SecondScreenState extends State<SecondScreen> {
       ),
       body: Container(
         alignment: Alignment.center,
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             Navigator.pop(context);
           },

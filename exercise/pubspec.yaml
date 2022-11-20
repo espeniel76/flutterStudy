@@ -7,38 +7,39 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.16.0-134.1.beta <3.0.0"
+  sdk: '>=2.19.0-406.0.dev <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
 
 
-  cupertino_icons: ^1.0.2
+  cupertino_icons: ^1.0.5
   transition: ^2.0.2
-  audio_service: ^0.18.3
-  just_audio: ^0.9.18
-  flutter_tts: ^3.3.3
-  fluttertoast: ^8.0.8
-  flutter_svg: ^1.0.3
-  syncfusion_flutter_gauges: ^19.4.47
-  http: ^0.13.4
-  marquee: ^2.2.0
+  audio_service: ^0.18.7
+  just_audio: ^0.9.30
+  flutter_tts: ^3.6.1
+  fluttertoast: ^8.1.1
+  flutter_svg: ^1.1.6
+  syncfusion_flutter_gauges: ^20.3.57
+  http: ^0.13.5
+  marquee: ^2.2.3
   advanced_icon: ^0.1.2
-  kakao_flutter_sdk: ^0.9.0
-  google_sign_in: ^5.2.3
+  kakao_flutter_sdk: ^1.2.2
+  google_sign_in: ^5.4.2
   localstorage: ^4.0.0+1
-  syncfusion_flutter_sliders: ^19.4.53
-  syncfusion_flutter_charts: ^19.4.53
+  syncfusion_flutter_sliders: ^20.3.57
+  syncfusion_flutter_charts: ^20.3.57
   volume_control: ^0.1.5
   volume: ^1.0.1
   sliding_up_panel: ^2.0.0+1
+  firebase_core: ^2.3.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-  flutter_lints: ^1.0.0
+  flutter_lints: ^2.0.1
 
 flutter:
 

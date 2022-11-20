@@ -50,19 +50,19 @@ class _MyFormValidationState extends State<MyFormValidation> {
                     }
                   },
                 ),
-                RaisedButton(
-                  onPressed: () {
-                    if (_formKey.currentState!.validate()) {
-                      // valid
-                      Scaffold.of(_formKey.currentContext!).showSnackBar(
-                        const SnackBar(
-                          content: Text('처리중'),
-                        ),
-                      );
-                    }
-                  },
-                  child: Text('완료'),
-                ),
+                // ElevatedButton(
+                //   onPressed: () {
+                //     if (_formKey.currentState!.validate()) {
+                //       // valid
+                //       Scaffold.of(_formKey.currentContext!).showSnackBar(
+                //         const SnackBar(
+                //           content: Text('처리중'),
+                //         ),
+                //       );
+                //     }
+                //   },
+                //   child: Text('완료'),
+                // ),
                 TextField(
                   focusNode: nameFocusNode,
                   controller: nameController,
@@ -73,13 +73,13 @@ class _MyFormValidationState extends State<MyFormValidation> {
                   ),
                   autofocus: true,
                 ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     FocusScope.of(context).requestFocus(nameFocusNode);
                   },
                   child: const Text('포커스'),
                 ),
-                RaisedButton(
+                ElevatedButton(
                   onPressed: () {
                     print(nameController.text);
                     showDialog(

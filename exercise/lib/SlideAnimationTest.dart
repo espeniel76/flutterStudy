@@ -5,7 +5,7 @@ class Page1 extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           child: Text('Go!'),
           onPressed: () {
             Navigator.of(context).push(_createRoute());
