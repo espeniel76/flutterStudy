@@ -14,11 +14,35 @@
       },
       "oauth_client": [
         {
+          "client_id": "372582661006-3qmd7v91iit4vo8ra0t989cmhdcebm4s.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.espeniel69.gmail.flutter_google_sign_in",
+            "certificate_hash": "98685510805203a7f98340dad36528e48376faee"
+          }
+        },
+        {
           "client_id": "372582661006-5i2urikil9kd4u9rir2vl9i5jtm6et1k.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.espeniel69.gmail.flutter_google_sign_in",
             "certificate_hash": "c631c9de269b8045e6826243e7742170b92c90a0"
+          }
+        },
+        {
+          "client_id": "372582661006-7l9ora92la1dtf7feo449pi7b5fa37nr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.espeniel69.gmail.flutter_google_sign_in",
+            "certificate_hash": "8751760561f6fbbfecc0243ce758ea04830a6ef3"
+          }
+        },
+        {
+          "client_id": "372582661006-j95bbpkas6cct1e5pc58tj4j20332iaf.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.espeniel69.gmail.flutter_google_sign_in",
+            "certificate_hash": "2e8b83989938a94ace1935428645f8b31db7001a"
           }
         },
         {
