@@ -38,13 +38,11 @@ class _MyAppState extends State<MyApp> {
         appBar: AppBar(title: const Text('Flutter Google Sign in')),
         body: Container(
           alignment: Alignment.center,
-          child: _buildWidget(),
+          child: _buildWidget()
         ));
   }
 
   Widget _buildWidget() {
-    // bool isSignedIn = false;
-
     GoogleSignInAccount? user = _currentUser;
 
     if (user != null) {
@@ -52,22 +50,10 @@ class _MyAppState extends State<MyApp> {
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            ListTile(
-              leading: GoogleUserCircleAvatar(identity: user),
-              title: Text(user.displayName ?? ''),
-              subtitle: Text(user.email),
-            ),
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'Signed in successfully',
-              style: TextStyle(fontSize: 20),
-            ),
-            ElevatedButton(
-              onPressed: signOut,
-              child: const Text('Sign out'),
-            )
+            ListTile(leading: GoogleUserCircleAvatar(identity: user), title: Text(user.displayName ?? ''), subtitle: Text(user.email)),
+            const SizedBox(height: 20),
+            const Text('Signed in successfully', style: TextStyle(fontSize: 20)),
+            ElevatedButton(onPressed: signOut, child: const Text('Sign out'))
           ],
         ),
       );
@@ -76,20 +62,10 @@ class _MyAppState extends State<MyApp> {
         padding: const EdgeInsets.all(12),
         child: Column(
           children: [
-            const SizedBox(
-              height: 20,
-            ),
-            const Text(
-              'You are not signed in',
-              style: TextStyle(fontSize: 20),
-            ),
-            const SizedBox(
-              height: 10,
-            ),
-            ElevatedButton(
-              onPressed: signIn,
-              child: const Text('Sign in'),
-            ),
+            const SizedBox(height: 20),
+            const Text('You are not signed in', style: TextStyle(fontSize: 20)),
+            const SizedBox(height: 10),
+            ElevatedButton(onPressed: signIn, child: const Text('Sign in')),
           ],
         ),
       );

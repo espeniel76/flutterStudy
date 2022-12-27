@@ -1,12 +1,11 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import 'package:localstorage/localstorage.dart';
 
 class LocalStorageTest extends StatefulWidget {
   const LocalStorageTest({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _LocalStorageTestState createState() => _LocalStorageTestState();
 }
 
@@ -17,7 +16,7 @@ class TodoItem {
   TodoItem({required this.title, required this.done});
 
   toJSONEncodable() {
-    Map<String, dynamic> m = new Map();
+    Map<String, dynamic> m = {};
 
     m['title'] = title;
     m['done'] = done;
@@ -37,10 +36,10 @@ class TodoList {
 }
 
 class _LocalStorageTestState extends State<LocalStorageTest> {
-  final TodoList list = new TodoList();
-  final LocalStorage storage = new LocalStorage('todo_app');
+  final TodoList list = TodoList();
+  final LocalStorage storage = LocalStorage('todo_app');
   bool initialized = false;
-  TextEditingController controller = new TextEditingController();
+  TextEditingController controller = TextEditingController();
 
   _toggleItem(TodoItem item) {
     setState(() {
@@ -51,7 +50,7 @@ class _LocalStorageTestState extends State<LocalStorageTest> {
 
   _addItem(String title) {
     setState(() {
-      final item = new TodoItem(title: title, done: false);
+      final item = TodoItem(title: title, done: false);
       list.items.add(item);
       _saveToStorage();
     });
@@ -71,18 +70,18 @@ class _LocalStorageTestState extends State<LocalStorageTest> {
 
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Localstorage demo'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Localstorage demo'),
       ),
       body: Container(
-          padding: EdgeInsets.all(10.0),
-          constraints: BoxConstraints.expand(),
+          padding: const EdgeInsets.all(10.0),
+          constraints: const BoxConstraints.expand(),
           child: FutureBuilder(
             future: storage.ready,
             builder: (BuildContext context, AsyncSnapshot snapshot) {
               if (snapshot.data == null) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               }
@@ -120,14 +119,14 @@ class _LocalStorageTestState extends State<LocalStorageTest> {
                   Expanded(
                     flex: 1,
                     child: ListView(
-                      children: widgets,
                       itemExtent: 50.0,
+                      children: widgets,
                     ),
                   ),
                   ListTile(
                     title: TextField(
                       controller: controller,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         labelText: 'What to do?',
                       ),
                       onEditingComplete: _save,
@@ -136,12 +135,12 @@ class _LocalStorageTestState extends State<LocalStorageTest> {
                       mainAxisSize: MainAxisSize.min,
                       children: <Widget>[
                         IconButton(
-                          icon: Icon(Icons.save),
+                          icon: const Icon(Icons.save),
                           onPressed: _save,
                           tooltip: 'Save',
                         ),
                         IconButton(
-                          icon: Icon(Icons.delete),
+                          icon: const Icon(Icons.delete),
                           onPressed: _clearStorage,
                           tooltip: 'Clear storage',
                         )

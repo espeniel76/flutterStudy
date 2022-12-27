@@ -11,17 +11,18 @@ import 'package:exercise/HttpTest.dart';
 import 'package:exercise/LocalStorageTest.dart';
 import 'package:exercise/MarqueeTest.dart';
 import 'package:exercise/MyFormValidation.dart';
+import 'package:exercise/OpenBrowser.dart';
 import 'package:exercise/PageViewTest.dart';
 import 'package:exercise/SignInDemo.dart';
 import 'package:exercise/SlideAnimationTest.dart';
 import 'package:exercise/SlidingUpPanelTest.dart';
 import 'package:exercise/SvgTest.dart';
-import 'package:exercise/SyncfusionFlutterGaugesTest.dart';
 import 'package:exercise/SyncfusionSliderTest.dart';
 import 'package:exercise/TTSTest.dart';
 import 'package:exercise/TabBarTest.dart';
 import 'package:exercise/TransitionTest.dart';
 import 'package:exercise/VolumeControlTest.dart';
+import 'package:exercise/WebViewX.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -67,23 +68,24 @@ class _HelloPageState extends State<HelloPage> {
               _push(context, '버블페인터', const CustomPaint()),
               _push(context, 'SVG', SvgTest()),
               _push(context, 'Page View', PageViewTest()),
-              _push(context, 'Gauges View', const SyncfusionFlutterGaugesTest()),
               _push(context, 'REST Test', const RestTest()),
               _push(context, 'Marquee', const MarqueeTest()),
               _push(context, 'Advanced Icon', const AdvancedIcon()),
               _push(context, 'Animated Container', const AnimatedContainerTest()),
               _push(context, 'Animated Faded', const AnimatedFaded()),
-              _push(context, 'Google SignIn', SignInDemo()),
+              _push(context, 'Google SignIn', const SignInDemo()),
               _push(context, 'Local Storage', const LocalStorageTest()),
               _push(context, 'Syncfusion Slider', const SyncfusionSliderTest()),
-              _push(context, 'Active Text test', ActiveTextTest()),
-              _push(context, 'VolumeControl', VolumeControlTest()),
+              _push(context, 'Active Text test', const ActiveTextTest()),
+              _push(context, 'VolumeControl', const VolumeControlTest()),
               _push(context, 'Slide Test', Page1()),
               _push(context, 'Tab bar', TabBarTest()),
-              _push(context, 'Sliding Up', SlidingUpPanelTest()),
-              _push(context, 'Checkbox Tile', CheckboxListTileTest()),
+              _push(context, 'Sliding Up', const SlidingUpPanelTest()),
+              _push(context, 'Checkbox Tile', const CheckboxListTileTest()),
               _push(context, 'Sections', ArticlePage(sections: sections)),
-              _push(context, 'GlobalKeyTest', GlobalKeyTest()),
+              _push(context, 'GlobalKeyTest', const GlobalKeyTest()),
+              _push(context, 'Browser', const OpenBrowser(title: "test")),
+              _push(context, 'WebViewX', const WebViewX()),
             ],
           ),
         ),
@@ -91,14 +93,14 @@ class _HelloPageState extends State<HelloPage> {
     );
   }
 
-  Widget _push(BuildContext _context, String _title, Widget _widget) {
+  Widget _push(BuildContext context, String title, Widget widget) {
     return Container(
       padding: const EdgeInsets.fromLTRB(5, 0, 5, 0),
       child: ElevatedButton(
         onPressed: () {
-          Navigator.push(_context, MaterialPageRoute(builder: (context) => _widget));
+          Navigator.push(context, MaterialPageRoute(builder: (context) => widget));
         },
-        child: Text(_title),
+        child: Text(title),
       ),
     );
   }
